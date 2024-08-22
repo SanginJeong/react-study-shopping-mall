@@ -2,6 +2,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  color: grey;
 }
 
 .wrap {
@@ -11,13 +12,16 @@ button {
 
 .container {
   width: 45%;
-  background-color: rgba(59, 130, 246, .5);
+  position: relative;
 }
 
 .navbar {
   background-color: black;
   color: white;
   padding: 0.3rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header {
@@ -71,6 +75,95 @@ ul,li{
   white-space: nowrap;
 }
 
+.carousel{
+  position: relative;
+}
+
+.carousel-image {
+  width: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-index {
+  position: absolute;
+  bottom: 10px;
+  right: 43%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+.product_img{
+  width: 100%;
+  cursor: pointer;
+}
+
+.product_card{
+  text-align: center;
+}
+
+.category{
+  text-align: center;
+}
+
+.menu{
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  color: grey;
+  padding: 10px 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.menu_button{
+  text-align: center;
+}
+
+.login{
+  height: 100vh;
+  text-align: center;
+}
+
+.loginForm{
+  width: 80%;
+  display: inline-block;
+}
+
+.loginForm > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_id, .input_pw {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+}
+
+.login_btn {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 50%;
+  font-size: 24px;
+}
 @media screen and (max-width:48rem) {
   .container{
     width: 100%;
@@ -79,5 +172,8 @@ ul,li{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     row-gap: 1rem;
+  }
+  .carousel-index{
+    right: 41%;
   }
 }
