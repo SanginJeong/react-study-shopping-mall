@@ -11,7 +11,7 @@ button {
 }
 
 .container {
-  width: 30%;
+  width: 800px;
   position: relative;
 }
 
@@ -233,10 +233,7 @@ ul,li{
   position: relative;
 }
 
-@media screen and (max-width:48rem) {
-  .container{
-    width: 100%;
-  }
+@media screen and (max-width:550px) {
   .nav_items{
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -244,16 +241,5 @@ ul,li{
   }
   .carousel-index{
     right: 41%;
-  }
-}
-
-@media screen and (max-width: 1020px) {
-  .container{
-    width: 70%;
-  }
-}
-@media screen and (max-width: 1440px) {
-  .container{
-    width: 70%;
   }
 }
