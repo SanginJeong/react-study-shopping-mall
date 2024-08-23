@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const Login = ({setUser}) => {
+const Login = ({setUser,saveURL,setSaveURL}) => {
   const [id,setId]= useState('');
   const [pw, setPw] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -21,8 +21,14 @@ const Login = ({setUser}) => {
         id,
         pw,
       })
+      
+      if(!saveURL){ // 로그인 버튼을 클릭해서 들어왔다면
+        navigate('/');
+        return
+      }
 
-      navigate('/');
+      navigate(saveURL); // 비로그인으로 상품을 클릭했다면
+      setSaveURL('');
     } catch (error) {
       setErrorMessage(error.message);
     }

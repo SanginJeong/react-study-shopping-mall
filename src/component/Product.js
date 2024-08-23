@@ -1,11 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const Product = ({product, user}) => {
+const Product = ({product, user, setSaveURL }) => {
   const navigate = useNavigate();
 
   const showDetail = (id) => {
     if(!user){
+      setSaveURL(`/product/${id}`);
       navigate('/login');
       return
     }

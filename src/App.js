@@ -7,15 +7,16 @@ import LoginPage from './page/LoginPage';
 import { useEffect, useState } from 'react';
 function App() {
   const [user, setUser] = useState(null);
+  const [saveURL, setSaveURL] = useState('');
 
   useEffect(()=>{
     console.log(user);
   },[user])
   return (
     <Routes>
-      <Route path='/login' element={<LoginPage setUser={setUser}/>}/>
-      <Route path='/' element={<ProductAll user={user} setUser={setUser}/>}/>
-      <Route path='/product/:id' element={<ProductDetail/>}/>
+      <Route path='/login' element={<LoginPage setUser={setUser} saveURL={saveURL} setSaveURL={setSaveURL}/>}/>
+      <Route path='/' element={<ProductAll user={user} setUser={setUser} saveURL={saveURL} setSaveURL={setSaveURL}/>}/>
+      <Route path='/product/:id' element={<ProductDetail user={user} setUser={setUser}/>}/>
     </Routes>
   );
 }

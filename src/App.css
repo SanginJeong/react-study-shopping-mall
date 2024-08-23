@@ -11,7 +11,7 @@ button {
 }
 
 .container {
-  width: 45%;
+  width: 30%;
   position: relative;
 }
 
@@ -79,6 +79,10 @@ ul,li{
   position: relative;
 }
 
+.logo{
+  cursor: pointer;
+}
+
 .carousel-image {
   width: 100%;
   object-fit: cover;
@@ -95,6 +99,7 @@ ul,li{
   border-radius: 5px;
   font-size: 14px;
   white-space: nowrap;
+  
 }
 
 .row{
@@ -106,6 +111,14 @@ ul,li{
 .product_img{
   width: 100%;
   cursor: pointer;
+}
+
+.detail_img{
+  width: 70%;
+}
+
+.img_wrap{
+  text-align: center;
 }
 
 .product_card{
@@ -128,6 +141,9 @@ ul,li{
   width: 100%;
 }
 
+.detail_info{
+  text-align: center;
+}
 
 .menu_button{
   text-align: center;
@@ -164,6 +180,59 @@ ul,li{
   width: 50%;
   font-size: 24px;
 }
+
+.productDetail{
+  height: 100vh;
+}
+
+.detail_button_area{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.append_btn{
+  background-color: black;
+  font-size: 16px;
+  padding: 6px 8px;
+  width: 30%;
+}
+
+.size-select-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.size-select {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.size-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.size-select-container::after {
+  content: '\25BC';
+  font-size: 16px;
+  position: absolute;
+  top: 38px;
+  right: 15px;
+  pointer-events: none;
+  color: #777;
+}
+
+.size-select-container {
+  position: relative;
+}
+
 @media screen and (max-width:48rem) {
   .container{
     width: 100%;
@@ -175,5 +244,16 @@ ul,li{
   }
   .carousel-index{
     right: 41%;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .container{
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .container{
+    width: 70%;
   }
 }
