@@ -5,7 +5,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [clicked, setClicked] = useState('여성');
   const navItems = ['여성','Divded','남성','신생아/유아','아동','Sale','지속가능성'];
-  
+  const [isOpenTab, setIsOpenTab] = useState(false);
+
   const search = (e) => {
     if(e.key === "Enter"){
       const keyword = e.target.value;
@@ -32,7 +33,12 @@ const Navbar = () => {
         <i class="fa-solid fa-magnifying-glass search_icon"></i>
       </form>
       
-      <ul className='nav_items'>
+      <div className="hamburger">
+        <button 
+          onClick={()=>{setIsOpenTab(!isOpenTab)}}
+          className='hamburgerBtn'><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <ul className={`nav_items ${isOpenTab ? 'active' : ''}`}>
         {navItems.map((item,index)=>(
           <li>
             <span 

@@ -233,12 +233,26 @@ ul,li{
   position: relative;
 }
 
+.hamburgerBtn{
+  padding: 10px;
+  font-size: 24px;
+  display: none;
+}
+
 @media screen and (max-width:550px) {
   .nav_items{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    row-gap: 1rem;
+    display: none;
   }
+
+  .nav_items.active{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hamburgerBtn{
+    display: block;
+  }
+
   .carousel-index{
     right: 41%;
   }
